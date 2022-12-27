@@ -41,24 +41,66 @@
                 </div>
             </div>
             <h3>para a maior ccxp de todos os tempos</h3>
-            <video id="vid" autoplay muted controls loop ><source src="assets/Arlequina.mp4" type="video/mp4"></video>
+            <video id="vid" autoplay muted loop ><source src="assets/Arlequina.mp4" type="video/mp4"></video>
         </div>
     </section>
     <section id="sessao2">
         <div id="container">
             <h3>AINDA DÁ TEMPO DE GARANTIR O SEU, MAS CORRE!</h3>
             <div class="imgs">
-                <img src="assets/quinta-feira.png" alt="quinta">
-                <img src="assets/sexta.png" alt="sexta">
-                <img src="assets/sabado.png" alt="sabado">
-                <img src="assets/domingo.png" alt="domingo">
+                <img 
+                src="assets/quinta-feira.png" 
+                alt="Quinta" 
+                id="quinta" 
+                class="card-ingressos"
+                onclick="selectCard('#quinta')"
+                onmouseover="highlightCard('quinta')" 
+                onmouseout="highlightCard('quinta')"/>
+                
+                <img 
+                src="assets/sexta.png" 
+                alt="Sexta" 
+                id="sexta" 
+                class="card-ingressos"
+                onclick="selectCard('#sexta')"
+                onmouseover="highlightCard('sexta')" 
+                onmouseout="highlightCard('sexta')"/>
+
+                <img 
+                src="assets/sabado.png" 
+                alt="Sabado" 
+                id="sabado" 
+                class="card-ingressos"
+                onclick="selectCard('#sabado')"
+                onmouseover="highlightCard('sabado')"
+                onmouseleave="highlightCard('sabado')"/>
+
+                <img 
+                src="assets/domingo.png" 
+                alt="Domingo" 
+                id="domingo" 
+                class="card-ingressos"
+                onclick="selectCard('#domingo')"
+                onmouseover="highlightCard('domingo')" 
+                onmouseleave="highlightCard('domingo')"/>
+
             </div>
         </div>
         <div class="button">
-            <button>Garanta o seu!</button>
+            <button id="purch-button" onclick="showSelectedCards()" onmouseover="highlightButton()" onmouseout="highlightButton()">Garanta o seu!</button>
         </div>
     </section>
+<footer>
+    <div class="forms">
+        <form action="https://www.google.com">
+            <input type="email" placeholder="Seu e-mail" required>
+            <input type="submit">
+        </form>
+    </div>
+</footer>
+
     <script src="countdown.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body{
+body {
     background-color: rgb(100, 92, 158);
 }
 
@@ -41,17 +41,18 @@ header {
 }
 
 #intro p {
-    font-size: 22px;
+    font-size: 25px;
     color: #FFFFFF;
-    margin: 3em 4em 3em 4em;
+    padding: 1rem 5rem;
+    text-indent: 2rem;
+
 }
 
 #content {
     text-align: center;
-    margin-right: 5em;
 }
 
-.timer{
+.timer {
     display: flex;
     justify-content: space-around;
     margin: 0.5em 0 0.5em 0;
@@ -60,23 +61,25 @@ header {
     color: rgba(243, 198, 31, 1);
 }
 
-#content video {
-    width: 750px;
-    height: 400px;
+#vid {
+    width: 85%;
     border: 1px solid whitesmoke;
     margin: 1.5em;
 }
 
-#content h3{
-    color:rgba(227, 56, 129, 1);
+#content h3 {
+    color: rgba(227, 56, 129, 1);
     font-size: 25px;
     text-transform: uppercase;
 }
 
-#container h3{
+
+
+#container h3 {
     color: rgba(227, 56, 129, 1);
     font-size: 25px;
     margin-bottom: 1em;
+
     text-align: center;
 }
 
@@ -84,30 +87,110 @@ header {
     text-align: center;
 }
 
-#sessao2{
+#sessao2 {
     display: grid;
-    grid-auto-flow: row;
     grid-template-columns: auto auto;
     align-items: center;
+    margin-bottom: 5em;
+}
+
+#container {
+    width: 85%;
 }
 
 
-button{
+
+#purch-button {
     border-radius: 20px;
-    background-color:rgba(243, 198, 31, 1);
-    color:#000000;
+    background-color: rgba(243, 198, 31, 1);
+    color: #000000;
     text-transform: uppercase;
     font-size: 25px;
     font-weight: 600;
     padding: 40px 80px 40px 80px;
 }
 
- button:hover {
+#purch-button:hover {
     color: rgb(100, 92, 158);
     cursor: pointer;
 }
 
-@media only screen and (max-width: 900px){
+.forms{
+    text-align: center;
+}
+
+input{
+    background: rgb(100, 92, 158);
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: 2px solid white;
+    margin: 30px;
+    width: 300px;
+    height: 70px;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input:hover {
+    color:rgba(243, 198, 31, 1);
+    cursor: pointer;
+}
+
+::placeholder{
+    text-indent: 0.5em;
+}
+
+footer {
+    background-color: #FFD900;
+    align-items: left;
+    height: 100%;
+}
+
+
+/*Classe criada para exibir sombra nos cards*/
+.card-highlight {
+    box-shadow: 5px 20px 18px black;
+}
+
+/*Classe criada para exibir borda nos cards selecionados*/
+.card-selected {
+    /*border: 5px solid green;*/
+    --border-size: 5px;
+    --border-angle: 0turn;
+    background-image: conic-gradient(from var(--border-angle),
+            rgb(100, 92, 158),
+            rgb(100, 92, 158),
+            rgb(100, 92, 158)),
+        conic-gradient(from var(--border-angle), transparent 80%, rgba(243, 198, 31, 1));
+    background-size: calc(90% - (var(--border-size) * 2)) calc(90% - (var(--border-size) * 2)),
+        cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: bg-spin 3s linear infinite;
+   
+}
+
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+/*Classe criada para exibir sombra no botão*/
+.button-highlight {
+    box-shadow: 10px 10px 10px 10px grey;
+}
+
+@media only screen and (max-width: 900px) {
 
 
     .main-content {
@@ -115,23 +198,92 @@ button{
         flex-direction: column;
     }
 
-    #sessao2{
+    #intro p {
+        font-size: 18px;
+    }
+
+    #dias,
+    #horas,
+    #minutos,
+    #segundos {
+        font-size: 50px;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #sessao2 {
         display: flex;
         flex-direction: column;
     }
 
-    .imgs img{
+    .imgs img {
         margin-top: 20px;
     }
 
-    .imgs{
+    .imgs {
         display: grid;
         grid-template-columns: auto auto;
-        align-items: center;
     }
 
-    button{
+    button {
         margin-top: 2em;
+        margin-bottom: 2em;
     }
 }
 
+
+@media only screen and (max-width: 1400px) {
+
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #intro p {
+        font-size: 18px;
+    }
+
+    #dias,
+    #horas,
+    #minutos,
+    #segundos {
+        font-size: 45px;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #vid {
+        width: 70%;
+    }
+
+    #sessao2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgs img {
+        margin-top: 20px;
+        margin-right: 30px;
+    }
+
+    .imgs {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    button {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+}
